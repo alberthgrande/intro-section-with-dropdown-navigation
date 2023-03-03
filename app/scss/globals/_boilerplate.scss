@@ -1,3 +1,13 @@
+@use "../util" as font;
+@use "../util" as color;
+body {
+  font-family: font.$font-family;
+  // font-size: font.$fs-paragraph;
+  font-weight: font.$fw-400;
+  // background: color.$almost-black;
+  overflow-x: hidden;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;

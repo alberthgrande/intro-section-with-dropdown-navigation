@@ -14,20 +14,64 @@
 
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- scss link -->
     <link rel="stylesheet" href="./dist/style.css" />
   </head>
   <body>
+    <header>
+      <div class="container">
+        <nav class="nav-main">
+          <img src="./images/logo.svg" alt="" />
+          <ul class="nav-list">
+            <li>
+              <a href="#" class="nav-link">Features</a>
+              <ul class="nav-link__features">
+                <li><a href="#">Todo List</a></li>
+                <li><a href="#">Calendar</a></li>
+                <li><a href="#">Reminders</a></li>
+                <li><a href="#">Planning</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="nav-link">Company</a>
+              <ul class="nav-link__company">
+                <li><a href="#">History</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </li>
+            <li><a href="#" class="nav-link">Careers</a></li>
+            <li><a href="#" class="nav-link">About</a></li>
+          </ul>
+
+          <ul class="nav-list">
+            <li><a href="#" class="nav-link">Login</a></li>
+            <li><a href="#" class="nav-link">Register</a></li>
+          </ul>
+          <button class="btn-mobile-nav">
+            <img
+              class="icon-open-menu"
+              src="./images/icon-menu.svg"
+              alt="hamburger menu icon"
+            />
+            <img
+              class="icon-close-menu"
+              src="./images/icon-close-menu.svg"
+              alt="close menu icon"
+            />
+          </button>
+        </nav>
+      </div>
+    </header>
     <main>
-      Features
-      <!--  -->
-      Company
-      <!--  -->
-      Careers
-      <!--  -->
-      About Login
-      <!--  -->
-      Register
       <!--  -->
       Make remote work
       <!--  -->
