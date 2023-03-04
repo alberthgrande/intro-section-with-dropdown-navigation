@@ -2,54 +2,72 @@
 @use "../util" as color;
 body {
   font-family: font.$font-family;
-  // font-size: font.$fs-paragraph;
+  font-size: font.$fs-paragraph;
   font-weight: font.$fw-400;
-  // background: color.$almost-black;
   overflow-x: hidden;
 }
 
 .main-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  // padding: 5rem;
-
-  margin-top: 60px;
 }
 
 .snap {
-  margin-left: 165px;
-  margin-right: 150px;
-  // max-width: 515px;
-  // margin: auto;
   &-title {
-    font-size: 3.4rem;
+    color: color.$almost-black;
+    font-weight: font.$fw-700;
     line-height: 1;
   }
   &-text {
-    margin: 2rem 0;
+    color: color.$medium-gray;
+  }
+  &-link {
+    background: color.$almost-black;
+    border-radius: 1rem;
+    color: color.$almost-white;
+    font-weight: font.$fw-700;
+    text-decoration: none;
+    padding: 1.3rem;
   }
   &-brand {
     display: flex;
     align-items: center;
-    gap: 2rem;
-
-    margin-top: 115px;
   }
 }
 
-.hero {
-  height: 640px;
-  width: 480px;
-  object-fit: cover;
-  margin: auto;
+@media only screen and (min-width: 48rem) {
+  .snap,
+  .hero {
+    margin: 65px auto 120px;
+    width: 480px;
+    height: 640px;
+  }
 }
 
 @media only screen and (max-width: 48rem) {
   .main-container {
     display: flex;
     flex-direction: column-reverse;
-    padding: 0;
+  }
+  .snap {
+    margin: 0 20px;
+    text-align: center;
+    &-title {
+      font-size: 2.194rem;
+      margin: 3.125rem 0 1.875rem;
+    }
+    &-text {
+      margin-bottom: 2.875rem;
+    }
+    &-brand img {
+      margin: 3.125rem auto 6.25rem;
+      height: auto;
+      width: 4.375rem;
+    }
+  }
+
+  .hero {
+    margin-top: 1.875rem;
   }
 }
 
