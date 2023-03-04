@@ -30,10 +30,9 @@ body {
     text-decoration: none;
     padding: 1.3rem;
   }
-
   &-link:hover {
     border: 1px solid color.$almost-black;
-    background: color.$almost-white;
+    background: transparent;
     color: color.$almost-black;
     outline: none;
   }
@@ -47,12 +46,12 @@ body {
   .snap,
   .hero {
     margin: 4.063rem auto 120px;
-    width: 480px;
+    max-width: 480px;
     height: 640px;
   }
 
   .snap {
-    margin: 165px 0 0 165px;
+    margin: 180px 0 0 165px;
     &-title {
       font-size: 4.5rem;
     }
@@ -66,7 +65,7 @@ body {
   }
 
   .hero {
-    margin-top: 13.875rem;
+    margin-top: 3.875rem;
     margin-right: 130px;
   }
 }
@@ -77,8 +76,7 @@ body {
     flex-direction: column-reverse;
   }
   .snap {
-    padding: 0 1rem;
-    margin: 0 auto;
+    margin: 0 20px;
     text-align: center;
     &-title {
       font-size: 2.194rem;

@@ -28,20 +28,24 @@
   <body>
     <header>
       <div class="container">
-        <nav class="nav-main">
+        <a href="#">
           <img src="./images/logo.svg" alt="" />
+        </a>
+        <nav class="nav-main">
           <ul class="nav-list">
             <li>
-              <a href="#" class="nav-link">Features</a>
+              <a href="#" class="nav-link features">Features</a>
               <ul class="nav-link__features">
-                <li><a href="#">Todo List</a></li>
-                <li><a href="#">Calendar</a></li>
-                <li><a href="#">Reminders</a></li>
-                <li><a href="#">Planning</a></li>
+                <li><a href="#" data-todolist-type="todolist">Todo List</a></li>
+                <li><a href="#" data-calendar-type="calendar">Calendar</a></li>
+                <li>
+                  <a href="#" data-reminders-type="reminders">Reminders</a>
+                </li>
+                <li><a href="#" data-planning-type="planning">Planning</a></li>
               </ul>
             </li>
             <li>
-              <a href="#" class="nav-link">Company</a>
+              <a href="#" class="nav-link company">Company</a>
               <ul class="nav-link__company">
                 <li><a href="#">History</a></li>
                 <li><a href="#">Our Team</a></li>
@@ -51,24 +55,23 @@
             <li><a href="#" class="nav-link">Careers</a></li>
             <li><a href="#" class="nav-link">About</a></li>
           </ul>
-
-          <ul class="nav-list">
+          <div class="nav-list">
             <li><a href="#" class="nav-link">Login</a></li>
-            <li><a href="#" class="nav-link">Register</a></li>
-          </ul>
-          <button class="btn-mobile-nav">
-            <img
-              class="icon-open-menu"
-              src="./images/icon-menu.svg"
-              alt="hamburger menu icon"
-            />
-            <img
-              class="icon-close-menu"
-              src="./images/icon-close-menu.svg"
-              alt="close menu icon"
-            />
-          </button>
+            <li><a href="#" class="nav-link register">Register</a></li>
+          </div>
         </nav>
+        <button class="btn-mobile-nav">
+          <img
+            class="icon-open-menu"
+            src="./images/icon-menu.svg"
+            alt="hamburger menu icon"
+          />
+          <img
+            class="icon-close-menu"
+            src="./images/icon-close-menu.svg"
+            alt="close menu icon"
+          />
+        </button>
       </div>
     </header>
     <main>
