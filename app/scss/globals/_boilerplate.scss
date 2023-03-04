@@ -10,6 +10,7 @@ body {
 .main-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 3.125rem;
 }
 
 .snap {
@@ -29,6 +30,13 @@ body {
     text-decoration: none;
     padding: 1.3rem;
   }
+
+  &-link:hover {
+    border: 1px solid color.$almost-black;
+    background: color.$almost-white;
+    color: color.$almost-black;
+    outline: none;
+  }
   &-brand {
     display: flex;
     align-items: center;
@@ -38,9 +46,28 @@ body {
 @media only screen and (min-width: 48rem) {
   .snap,
   .hero {
-    margin: 65px auto 120px;
+    margin: 4.063rem auto 120px;
     width: 480px;
     height: 640px;
+  }
+
+  .snap {
+    margin: 165px 0 0 165px;
+    &-title {
+      font-size: 4.5rem;
+    }
+    &-text {
+      margin: 4.063rem 0 4.438rem;
+    }
+    &-brand {
+      margin-top: 120px;
+      gap: 2rem;
+    }
+  }
+
+  .hero {
+    margin-top: 3.875rem;
+    margin-right: 130px;
   }
 }
 
