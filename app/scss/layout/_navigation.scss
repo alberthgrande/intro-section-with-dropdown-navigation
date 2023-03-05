@@ -8,87 +8,6 @@
   padding: 30px 40px 0;
 } // container
 
-// nav-main
-.nav-main {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-left: 60px;
-}
-.nav-list {
-  display: flex;
-  gap: 2.375rem;
-  list-style: none;
-}
-.nav-link {
-  color: color.$medium-gray;
-  font-weight: font.$fw-700;
-  text-decoration: none;
-
-  // sub links
-  &__features,
-  &__company {
-    list-style: none;
-    display: none;
-    position: absolute;
-    top: 70px;
-    padding: 1.5rem;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 0px;
-    border-radius: 1rem;
-    transition: 0.4s all;
-  }
-  &__features {
-    left: 140px;
-  }
-
-  &__features a,
-  &__company a {
-    color: color.$medium-gray;
-    text-decoration: none;
-  }
-
-  // hover state
-  &__features a:hover,
-  &__company a:hover {
-    color: color.$almost-black;
-  }
-
-  &__features a[data-todolist-type="todolist"]::before {
-    content: url(../images/icon-todo.svg);
-    margin-right: 1rem;
-  }
-  &__features a[data-calendar-type="calendar"]::before {
-    content: url(../images/icon-calendar.svg);
-    margin-right: 1rem;
-  }
-  &__features a[data-reminders-type="reminders"]::before {
-    content: url(../images/icon-reminders.svg);
-    margin-right: 1rem;
-  }
-  &__features a[data-planning-type="planning"]::before {
-    content: url(../images/icon-planning.svg);
-    margin-right: 1rem;
-  }
-  // sub links // toggle js
-  &__features.active-features,
-  &__company.active-company {
-    display: block;
-  }
-}
-
-// hover state
-.nav-link:hover {
-  color: color.$almost-black;
-}
-.register {
-  border: 2px solid color.$medium-gray;
-  padding: 0.7rem;
-  border-radius: 0.7rem;
-}
-.register:hover {
-  border: 2px solid color.$almost-black;
-}
-
 // affter arrow
 .features::after,
 .company::after {
@@ -107,12 +26,100 @@
   right: -0.5rem;
 }
 
+// hover state
+.nav-link:hover {
+  color: color.$almost-black;
+}
+.register {
+  border: 2px solid color.$medium-gray;
+  padding: 0.7rem;
+  border-radius: 0.7rem;
+}
+.register:hover {
+  border: 2px solid color.$almost-black;
+}
+
 // toggle button menu
 .btn-mobile-nav {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
   display: none;
 }
 .icon-close-menu {
   display: none;
+}
+
+@media only screen and (min-width: 62rem) {
+  // nav-main
+  .nav-main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 60px;
+  }
+  .nav-list {
+    display: flex;
+    gap: 2.375rem;
+    list-style: none;
+  }
+  .nav-link {
+    color: color.$medium-gray;
+    font-weight: font.$fw-700;
+    text-decoration: none;
+
+    // sub links
+    &__features,
+    &__company {
+      list-style: none;
+      display: none;
+      position: absolute;
+      top: 70px;
+      padding: 1.5rem;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 0px;
+      border-radius: 1rem;
+      transition: 0.4s all;
+    }
+    &__features {
+      left: 140px;
+    }
+
+    &__features a,
+    &__company a {
+      color: color.$medium-gray;
+      text-decoration: none;
+    }
+
+    // hover state
+    &__features a:hover,
+    &__company a:hover {
+      color: color.$almost-black;
+    }
+
+    &__features a[data-todolist-type="todolist"]::before {
+      content: url(../images/icon-todo.svg);
+      margin-right: 1rem;
+    }
+    &__features a[data-calendar-type="calendar"]::before {
+      content: url(../images/icon-calendar.svg);
+      margin-right: 1rem;
+    }
+    &__features a[data-reminders-type="reminders"]::before {
+      content: url(../images/icon-reminders.svg);
+      margin-right: 1rem;
+    }
+    &__features a[data-planning-type="planning"]::before {
+      content: url(../images/icon-planning.svg);
+      margin-right: 1rem;
+    }
+    // sub links // toggle js
+    &__features.active-features,
+    &__company.active-company {
+      display: block;
+    }
+  }
 }
 
 @media only screen and (max-width: 62rem) {
@@ -123,14 +130,120 @@
   }
 
   .nav-main {
-    background-color: violet;
-    display: none;
-    justify-content: space-between;
-    width: 100%;
+    // position
+    position: absolute;
+    top: 0;
+    right: 0;
+    // layout
+    display: flex;
+    flex-direction: column;
+
+    height: 150vh;
+    width: 240px;
+    background-color: #fff;
+
+    opacity: 0;
+    pointer-events: none;
+    visibility: none;
+    transform: translateX(100%);
+    transition: all 0.4s;
+    z-index: 99;
+  }
+
+  .nav-list {
+    list-style: none;
+    margin-top: 85px;
+    z-index: 99;
+  }
+
+  .nav-list li {
+    margin-bottom: 1rem;
+  }
+
+  .nav-link {
+    color: color.$medium-gray;
+    font-weight: font.$fw-700;
+    text-decoration: none;
+
+    // sub links
+    &__features,
+    &__company {
+      list-style: none;
+      display: none;
+      top: 70px;
+      padding: 1.5rem;
+
+      border-radius: 1rem;
+    }
+    &__features {
+      left: 140px;
+    }
+
+    &__features a,
+    &__company a {
+      color: color.$medium-gray;
+      text-decoration: none;
+    }
+
+    // hover state
+    &__features a:hover,
+    &__company a:hover {
+      color: color.$almost-black;
+    }
+
+    &__features a[data-todolist-type="todolist"]::before {
+      content: url(../images/icon-todo.svg);
+      margin-right: 1rem;
+    }
+    &__features a[data-calendar-type="calendar"]::before {
+      content: url(../images/icon-calendar.svg);
+      margin-right: 1rem;
+    }
+    &__features a[data-reminders-type="reminders"]::before {
+      content: url(../images/icon-reminders.svg);
+      margin-right: 1rem;
+    }
+    &__features a[data-planning-type="planning"]::before {
+      content: url(../images/icon-planning.svg);
+      margin-right: 1rem;
+    }
+    // sub links // toggle js
+    &__features.active-features,
+    &__company.active-company {
+      display: block;
+    }
   }
 
   // toggle button menu
   .btn-mobile-nav {
     display: block;
+    z-index: 100;
+  }
+
+  .nav-open .nav-main {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0%);
+  }
+  .nav-open .icon-open-menu {
+    display: none;
+  }
+  .nav-open .icon-close-menu {
+    display: block;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 98;
+  }
+
+  .form {
+    margin: 0 auto;
+    text-align: center;
   }
 }
